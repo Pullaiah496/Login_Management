@@ -1,0 +1,88 @@
+/* Modern UI for login/register/dashboard */
+:root{
+  --bg1: #4a90e2;
+  --bg2: #9013fe;
+  --card-bg: #ffffff;
+  --accent: #4a90e2;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, Arial, sans-serif;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  padding:20px;
+}
+
+.container{
+  width:380px;
+  max-width:95%;
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  text-align:center;
+}
+
+h2{margin-top:0;color:#1b1b1b}
+
+input{
+  width:100%;
+  padding:12px 14px;
+  margin:10px 0;
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  font-size:15px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  background:var(--accent);
+  color:white;
+  font-weight:600;
+  font-size: 17px;
+  cursor:pointer;
+  margin-top:15px;
+}
+
+button:hover{opacity:0.95}
+
+.file-label{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:10px;
+  border:1px dashed #ddd;
+  border-radius:10px;
+  cursor:pointer;
+  margin:8px 0;
+}
+
+.file-label input{ display:none }
+
+#msg{margin-top:12px;font-weight:600;color:#333}
+
+/* Dashboard */
+.dashboard .profile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+.dashboard img{
+  width:220px;
+  height:220px;
+  border-radius:999px;
+  object-fit:cover;
+  border:6px solid rgba(74,144,226,0.12);
+  background: #f6f8fb;
+}
+.dashboard .controls{ margin-top:12px }

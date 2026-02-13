@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Extra layout improvement for top-center alignment */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;   /* pushes content to top */
+      padding-top: 40px;         /* space from very top */
+    }
+
+    .dashboard {
+      width: 420px;
+      max-width: 95%;
+      text-align: center;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid rgba(74,144,226,0.20);
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .profile h2 {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    #logoutBtn{
+      font-size: 20px;
+    }
+    #user-name{
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container dashboard">
+
+    <div class="profile">
+      <img id="user-photo" src="" alt="Profile photo" />
+      <h2 id="user-name"></h2>
+    </div>
+
+    <div class="controls">
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+  </div>
+
+  <script>
+    const username = localStorage.getItem('username')
+    const photo = localStorage.getItem('photo')
+
+    if (!username) {
+      window.location.href = 'index.html'
+    } else {
+      document.getElementById('user-name').innerText = username
+      if (photo && photo !== 'null') {
+        document.getElementById('user-photo').src = '/uploads/' + photo
+      } else {
+        document.getElementById('user-photo').src = 'default-avatar.png'
+      }
+    }
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('username')
+      localStorage.removeItem('photo')
+      window.location.href = 'index.html'
+    })
+  </script>
+</body>
+</html>
