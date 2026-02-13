@@ -14,7 +14,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  background: url('background-image');
   padding:20px;
 }
 
